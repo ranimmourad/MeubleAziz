@@ -20,15 +20,16 @@ export default function HomePage() {
   return (
     <SiteShell>
       {/* HERO — image only, no text overlay, just 2 buttons near the bottom */}
-      <section id="hero-section" className="relative w-full">
+      <section id="hero-section" className="relative w-full pt-20">
         <div className="relative w-full aspect-[2/1] sm:aspect-[2.2/1]">
           <Image
             src="/images/brand/hero.png"
             alt="Meuble Aziz — L'élégance de votre intérieur"
             fill
             priority
+            quality={90}
             sizes="100vw"
-            className="object-cover"
+            className="object-cover object-center"
           />
           <div className="absolute inset-x-0 bottom-0 flex justify-center gap-2 sm:gap-4 px-4 pb-4 sm:pb-8">
             <Link
@@ -65,6 +66,7 @@ export default function HomePage() {
                 alt={cat.name}
                 fill
                 sizes="(max-width:768px) 50vw, 20vw"
+                quality={85}
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
