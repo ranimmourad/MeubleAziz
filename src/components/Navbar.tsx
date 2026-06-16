@@ -18,7 +18,7 @@ export default function Navbar() {
   const { cartCount, favCount } = useStore();
 
   return (
-    <header className="sticky top-0 z-50 bg-navbar border-b border-sand/60">
+    <header className="sticky top-0 z-50 bg-[#F4F4F2] border-b border-sand/60">
       <nav className="container-site flex items-center justify-between h-20">
         {/* Logo blends into navbar (same background) */}
         <Link href="/" className="flex items-center" aria-label="Meuble Aziz - Accueil">
@@ -78,7 +78,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <ul className="md:hidden bg-navbar border-t border-sand/60 px-6 py-3 space-y-1">
+        <ul className="md:hidden bg-[#F4F4F2] border-t border-sand/60 px-6 py-3 space-y-1">
           {links.map((l) => (
             <li key={l.href}>
               <Link
