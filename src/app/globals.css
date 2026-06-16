@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f5f1ea;
+  --foreground: #1c1c1c;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+@layer components {
+  .container-site {
+    @apply max-w-site mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-brand text-cream px-6 py-3 text-sm font-medium tracking-wide uppercase transition-colors hover:bg-wood-dark;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border border-brand text-brand px-6 py-3 text-sm font-medium tracking-wide uppercase transition-colors hover:bg-brand hover:text-cream;
+  }
+  .section-title {
+    @apply font-serif text-3xl sm:text-4xl text-brand font-semibold;
+  }
+}
