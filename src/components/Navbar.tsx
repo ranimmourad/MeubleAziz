@@ -25,10 +25,10 @@ export default function Navbar() {
           <Image
             src="/images/brand/logo.png"
             alt="Meuble Aziz"
-            width={150}
-            height={75}
+            width={200}
+            height={100}
             priority
-            className="h-14 w-auto object-contain"
+            className="h-[70px] w-auto object-contain"
           />
         </Link>
 
