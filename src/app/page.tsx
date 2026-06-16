@@ -30,11 +30,17 @@ export default function HomePage() {
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-x-0 bottom-0 flex justify-center gap-3 sm:gap-4 pb-4 sm:pb-8">
-            <Link href="/collection" className="btn-primary text-xs sm:text-sm">
+          <div className="absolute inset-x-0 bottom-0 flex justify-center gap-2 sm:gap-4 px-4 pb-4 sm:pb-8">
+            <Link
+              href="/collection"
+              className="btn-primary text-[10px] sm:text-sm px-3 py-1.5 sm:px-6 sm:py-3"
+            >
               Découvrir la collection
             </Link>
-            <Link href="/contact" className="btn-outline bg-white/80 text-xs sm:text-sm">
+            <Link
+              href="/contact"
+              className="btn-outline bg-white/80 text-[10px] sm:text-sm px-3 py-1.5 sm:px-6 sm:py-3"
+            >
               Nous contacter
             </Link>
           </div>
