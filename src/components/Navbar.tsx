@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useStore } from "@/context/StoreContext";
 
@@ -14,11 +14,33 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const pathname = usePathname();
   const { cartCount, favCount } = useStore();
 
+  useEffect(() => {
+    let lastY = window.scrollY;
+
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      if (currentY > lastY && currentY > 80) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+      lastY = currentY;
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 bg-[#fefdfe] border-b border-sand/60">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 bg-[#fefdfe] border-b border-sand/60 transition-transform duration-300 ${
+        hidden ? "-translate-y-full" : "translate-y-0"
+      }`}
+    >
       <nav className="container-site flex items-center justify-between h-20">
         {/* Logo blends into navbar (same background) */}
         <Link href="/" className="flex items-center" aria-label="Meuble Aziz - Accueil">
